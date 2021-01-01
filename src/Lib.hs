@@ -1,6 +1,14 @@
 module Lib
-    ( someFunc
-    ) where
+  ( modifyNth,
+    replaceNth,
+  )
+where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+modifyNth :: Int -> (a -> a) -> [a] -> [a]
+modifyNth _ _ [] = []
+modifyNth n newValFn (x : xs)
+  | n == 0 = newValFn x : xs
+  | otherwise = x : replaceNth (n -1) (newValFn x) xs
+
+replaceNth :: Int -> a -> [a] -> [a]
+replaceNth n newVal = modifyNth n (const newVal)

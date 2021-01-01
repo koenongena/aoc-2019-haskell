@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c8919425bb38489031a681007db4b80d650f1f431faecafe891c94bb5fdc96b8
+-- hash: a88694c2ae5a0ecbc10b2ff4ddfae217dccc8785b8f29253ccdc1c4d36639bc8
 
 name:           aoc-haskell
 version:        0.1.0.0
@@ -39,6 +39,8 @@ library
 executable aoc-haskell-exe
   main-is: Main.hs
   other-modules:
+      Day1
+      Day2
       Paths_aoc_haskell
   hs-source-dirs:
       app
